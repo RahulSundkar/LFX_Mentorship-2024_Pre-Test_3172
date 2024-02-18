@@ -74,7 +74,7 @@ Run the [main.rs](./burnbook_guide/src/main.rs) with any input choice other than
 
 ## Conclusion: 
 **Successfully executed the follow along MNIST example from the Burn Book using the Burn framework**
-
+___
 
 # Task 3
 >3. For Proposal [LFX Mentorship (Mar-May, 2024): Integrate burn.rs as a new WASI-NN backend #3172](https://github.com/WasmEdge/WasmEdge/issues/3172):
@@ -118,3 +118,21 @@ Copy this `libwasmedge_rustls.so` to `~/.wasmedge/plugin` to install the rustls 
 
 ![target/release; ls -l](./images/12.png)
 
+Now we are ready to run the examples. **To show the use of the rustls plugin I have only run the HTTPS examples.**
+
+Add the `wasm32-wasi` as a compilation target for rust.
+```
+rustup add --target wasm32-wasi
+```
+
+![wasm32-wasi](./images/13.png)
+
+## 3. WasmEdge reqwest API example:
+To run this example clone the [wasmedge_reqwest_demo](https://github.com/WasmEdge/wasmedge_reqwest_demo) repository and build it with the wasm compilation target.
+```
+git clone https://github.com/WasmEdge/wasmedge_reqwest_demo
+cd wasmedge_reqwest_demo/
+cargo build --target wasm32-wasi --release
+```
+
+![reqwest setup](./images/14.png)
