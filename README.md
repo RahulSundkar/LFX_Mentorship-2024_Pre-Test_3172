@@ -18,7 +18,7 @@ ___
 
 **For this task i have chosen to work with the [burn](https://github.com/tracel-ai/burn) framework.**
 
-**Example Chosen:** Follow along of [guide](https://burn.dev/book/basic-workflow/index.html) from [The Burn Book](https://burn.dev/book/overview.html) (___Training a simple CNN on the MNIST dataset and running inference___)
+**Examples Chosen:** Follow along of [guide](https://burn.dev/book/basic-workflow/index.html) from [The Burn Book](https://burn.dev/book/overview.html) (___Training a simple CNN on the MNIST dataset and running inference___)
 
 ## 1. Setup: 
 Created a project [burnbook_guide](./burnbook_guide) and added dependencies.
@@ -75,8 +75,46 @@ Run the [main.rs](./burnbook_guide/src/main.rs) with any input choice other than
 ## Conclusion: 
 **Successfully executed the follow along MNIST example from the Burn Book using the Burn framework**
 
-# Task 2
+
+# Task 3
 >3. For Proposal [LFX Mentorship (Mar-May, 2024): Integrate burn.rs as a new WASI-NN backend #3172](https://github.com/WasmEdge/WasmEdge/issues/3172):
 >   
 >      - Follow [this guide](https://wasmedge.org/docs/contribute/source/plugin/rusttls/) to build and execute the `rustls` plugin.
 >      - Please choose any example to run the `rustls` plugin on your device, then share screenshots and a summary of your build process and execution results.
+
+**Examples Chosen:** [wasmedge_reqwest_demo](https://github.com/WasmEdge/wasmedge_reqwest_demo) and [wasmedge_hyper_demo](https://github.com/WasmEdge/wasmedge_hyper_demo)
+
+## 1. Install WasmEdge: 
+Install WasmEdge for current user by running the commands shown in the [installation guide](https://wasmedge.org/docs/start/install/)
+```
+curl -sSf https://raw.githubusercontent.com/WasmEdge/WasmEdge/master/utils/install.sh | bash
+source $HOME/.wasmedge/env
+```
+
+![install wasmedge](./images/9.png)
+
+## 2. Build WasmEdge Rustls plugin:
+**Prerequisite:** CMake: Minimum version 3.12. Install it from the [official website](https://cmake.org/download/).
+
+Clone the WasmEdge repository. I have cloned the branch `hydai/0.13.5_ggml_lts` as specified in the pre-test details.
+```
+git clone -b hydai/0.13.5_ggml_lts --single-branch https://github.com/WasmEdge/WasmEdge.git
+```
+
+![git clone wasmedge](./images/10.png)
+
+Next cd into the `WasmEdge/plugins/wasmedge_rustls` directory and build the rust project in release mode.
+```
+cd WasmEdge/plugins/wasmedge_rustls
+cargo build --release
+```
+
+![build release](./images/11.png)
+
+A `libwasmedge_rustls.so` system object file has been created in the `target/release` directory as seen below.
+Copy this `libwasmedge_rustls.so` to `~/.wasmedge/plugin` to install the rustls plugin. We do this because of the behaviour of the command to [install WasmEdge with plug-ins](https://wasmedge.org/docs/start/install/#install-wasmedge-with-plug-ins).
+
+>The installer downloads the plug-in files from the WasmEdge release on GitHub, unzips them, and then copies them over to the `~/.wasmedge/plugin/` folder (for user install) and to the `/usr/local/lib/wasmedge/` folder (for system install).
+
+![target/release; ls -l](./images/12.png)
+
