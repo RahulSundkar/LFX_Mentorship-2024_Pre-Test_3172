@@ -1,5 +1,5 @@
 # LFX Mentorship 2024 Mar-May Pre-Test
-This is a [pre-test](https://github.com/WasmEdge/WasmEdge/discussions/3182) for the project: [LFX Mentorship (Mar-May, 2024): Integrate burn.rs as a new WASI-NN backend](https://github.com/WasmEdge/WasmEdge/issues/3172)
+**This is a [pre-test](https://github.com/WasmEdge/WasmEdge/discussions/3182) for the project: [LFX Mentorship (Mar-May, 2024): Integrate burn.rs as a new WASI-NN backend](https://github.com/WasmEdge/WasmEdge/issues/3172)**
 
 ## Table of Contents
 
@@ -45,4 +45,30 @@ These are added because i faced some errors during execution.
 Now the [Cargo.toml](./burnbook_guide/Cargo.toml) file should look like this: 
 
 ![Cargo.toml](./images/4.png)
+
+Build the project: 
+```
+cargo build
+```
+
+![cargo build](./images/3.png)
+
+### 2. Coding:
+Code is written by doing a follow along of the [guide](https://burn.dev/book/basic-workflow/index.html) and also referring to this example's [github](https://github.com/tracel-ai/burn/tree/main/examples/guide) for the complete and updated code. 
+
+### 3. Training:
+Run the [main.rs](./burnbook_guide/src/main.rs) with choice 0 to start the training.
+
+![main.rs](./images/7.png)
+
+Burn displays a training dashboard in the CLI
+
+![training start](./images/5.png)
+
+![training ending](./images/6.png)
+
+### 3. Inference: 
+Run the [main.rs](./burnbook_guide/src/main.rs) with any input choice other than 0 to ge the inference for the image at the 55th index in the MNIST test set (hardcoded in the main function).
+
+![inference](./images/8.png)
 
