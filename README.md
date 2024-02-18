@@ -67,13 +67,15 @@ Burn displays a training dashboard in the CLI
 
 ![training ending](./images/6.png)
 
+The model weights are stored in the [artifacts](/burnbook_guide/artifacts) folder and are later used for model inference.
+
 ## 4. Inference: 
 Run the [main.rs](./burnbook_guide/src/main.rs) with any input choice other than 0 to ge the inference for the image at the 55th index in the MNIST test set (hardcoded in the main function).
 
 ![inference](./images/8.png)
 
 ## Conclusion: 
-**Successfully executed the follow along MNIST example from the Burn Book using the Burn framework**
+**Successfully executed the follow along MNIST example from the Burn Book using the Burn framework.**
 ___
 
 # Task 3
@@ -136,3 +138,50 @@ cargo build --target wasm32-wasi --release
 ```
 
 ![reqwest setup](./images/14.png)
+
+Compile the `https.wasm` file.
+```
+wasmedge compile target/wasm32-wasi/release/https.wasm https.wasm
+```
+
+![reqwest compile](./images/14_5.png)
+
+Run the example.
+```
+wasmedge https.wasm
+```
+
+![reqwest run](./images/15.png)
+
+We get a reponse from the HTTPS secured website.
+
+## 4. WasmEdge hyper API example: 
+To run this example clone the [wasmedge_hyper_demo](https://github.com/WasmEdge/wasmedge_hyper_demo) repository and build the client-https project with the wasm compilation target.
+```
+git clone https://github.com/WasmEdge/wasmedge_hyper_demo
+cd wasmedge_hyper_demo/client-https
+cargo build --target wasm32-wasi --release
+```
+
+![hyper clone](./images/16.png)
+
+![hyper build](./images/17.png)
+
+Compile the `wasmedge_hyper_client_https.wasm` file.
+```
+wasmedge compile target/wasm32-wasi/release/wasmedge_hyper_client_https.wasm wasmedge_hyper_client_https.wasm
+```
+
+![hyper compile](./images/18.png)
+
+Run the example.
+```
+wasmedge wasmedge_hyper_client_https.wasm
+```
+
+![hyper run](./images/19.png)
+
+We get a reponse from the HTTPS secured website.
+
+## Conclusion: 
+**Successfully executed the WasmEdge reqwest API example and the WasmEdge hyper API example with the rustls plug-in.**
