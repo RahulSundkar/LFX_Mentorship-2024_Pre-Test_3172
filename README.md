@@ -3,17 +3,18 @@
 
 ## Table of Contents
 ### 1. [Task 1](/README.md#task-1)
-   - [Setup](url)
-   - [Coding](url)
-   - [Training](url)
-   - [Inference](url)
-   - [Conclusion](url)
+   - [Setup](README.md#1-setup)
+   - [Coding](README.md#2-coding)
+   - [Training](README.md#3-training)
+   - [Inference](README.md#4-inference)
+   - [Conclusion](README.md#conclusion)
 
-### 2. [Task 2](/README.md#task-2)
-   - [Install WasmEdge](url)
-   - [Build WasmEdge Rustls plug-in](url)
-   - [WasmEdge reqwest API example](url)
-   - [WasmEdge hyper API example](url)
+### 2. [Task 2](/README.md#task-3)
+   - [Install WasmEdge](README.md#1-install-wasmedge)
+   - [Build WasmEdge Rustls plug-in](README.md#2-build-wasmedge-rustls-plug-in)
+   - [WasmEdge reqwest API example](README.md#3-wasmedge-reqwest-api-example)
+   - [WasmEdge hyper API example](README.md#3-wasmedge-hyper-api-example)
+   - [Conclusion](README.md#conclusion-1)
 
 ___
 
