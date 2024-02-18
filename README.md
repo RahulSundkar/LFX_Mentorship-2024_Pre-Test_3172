@@ -2,7 +2,18 @@
 **This is a [pre-test](https://github.com/WasmEdge/WasmEdge/discussions/3182) for the project: [LFX Mentorship (Mar-May, 2024): Integrate burn.rs as a new WASI-NN backend](https://github.com/WasmEdge/WasmEdge/issues/3172)**
 
 ## Table of Contents
+### 1. [Task 1](/README.md#task-1)
+   - [Setup](url)
+   - [Coding](url)
+   - [Training](url)
+   - [Inference](url)
+   - [Conclusion](url)
 
+### 2. [Task 2](/README.md#task-2)
+   - [Install WasmEdge](url)
+   - [Build WasmEdge Rustls plug-in](url)
+   - [WasmEdge reqwest API example](url)
+   - [WasmEdge hyper API example](url)
 
 ___
 
@@ -95,7 +106,7 @@ source $HOME/.wasmedge/env
 
 ![install wasmedge](./images/9.png)
 
-## 2. Build WasmEdge Rustls plugin:
+## 2. Build WasmEdge Rustls plug-in:
 **Prerequisite:** CMake: Minimum version 3.12. Install it from the [official website](https://cmake.org/download/).
 
 Clone the WasmEdge repository. I have cloned the branch `hydai/0.13.5_ggml_lts` as specified in the pre-test details.
@@ -114,13 +125,13 @@ cargo build --release
 ![build release](./images/11.png)
 
 A `libwasmedge_rustls.so` system object file has been created in the `target/release` directory as seen below.
-Copy this `libwasmedge_rustls.so` to `~/.wasmedge/plugin` to install the rustls plugin. We do this because of the behaviour of the command to [install WasmEdge with plug-ins](https://wasmedge.org/docs/start/install/#install-wasmedge-with-plug-ins).
+Copy this `libwasmedge_rustls.so` to `~/.wasmedge/plugin` to install the rustls plug-in. We do this because of the behaviour of the command to [install WasmEdge with plug-ins](https://wasmedge.org/docs/start/install/#install-wasmedge-with-plug-ins).
 
 >The installer downloads the plug-in files from the WasmEdge release on GitHub, unzips them, and then copies them over to the `~/.wasmedge/plugin/` folder (for user install) and to the `/usr/local/lib/wasmedge/` folder (for system install).
 
 ![target/release; ls -l](./images/12.png)
 
-Now we are ready to run the examples. **To show the use of the rustls plugin I have only run the HTTPS examples.**
+Now we are ready to run the examples. **To show the use of the rustls plug-in I have only run the HTTPS examples.**
 
 Add the `wasm32-wasi` as a compilation target for rust.
 ```
