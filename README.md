@@ -138,14 +138,14 @@ cp libwasmedge_rustls.so ~/.wasmedge/plugin
 
 ![target/release; ls -l](./images/12.png)
 
-Now we are ready to run the examples. **To show the use of the rustls plug-in I have only run the HTTPS examples.**
-
 Add the `wasm32-wasi` as a compilation target for rust.
 ```
 rustup add --target wasm32-wasi
 ```
 
 ![wasm32-wasi](./images/13.png)
+
+Now we are ready to run the examples. **To show the use of the rustls plug-in I have only run the HTTPS examples.**
 
 ## 3. WasmEdge reqwest API example:
 To run this example clone the [wasmedge_reqwest_demo](https://github.com/WasmEdge/wasmedge_reqwest_demo) repository and build it with the wasm compilation target.
