@@ -9,11 +9,11 @@
    - [Inference](README.md#4-inference)
    - [Conclusion](README.md#conclusion)
 
-### 2. [Task 2](/README.md#task-3)
+### 2. [Task 3](/README.md#task-3)
    - [Install WasmEdge](README.md#1-install-wasmedge)
    - [Build WasmEdge Rustls plug-in](README.md#2-build-wasmedge-rustls-plug-in)
    - [WasmEdge reqwest API example](README.md#3-wasmedge-reqwest-api-example)
-   - [WasmEdge hyper API example](README.md#3-wasmedge-hyper-api-example)
+   - [WasmEdge hyper API example](README.md#4-wasmedge-hyper-api-example)
    - [Conclusion](README.md#conclusion-1)
 
 ___
@@ -28,9 +28,9 @@ ___
 >
 >    You are required to share screenshots and a brief documentation detailing your build and execution process for examples from these frameworks. You can pick any example to demonstrate the execution.
 
-**For this task i have chosen to work with the [burn](https://github.com/tracel-ai/burn) framework.**
+**For this task I have chosen to work with the [burn](https://github.com/tracel-ai/burn) framework.**
 
-**Examples Chosen:** Follow along of [guide](https://burn.dev/book/basic-workflow/index.html) from [The Burn Book](https://burn.dev/book/overview.html) (___Training a simple CNN on the MNIST dataset and running inference___)
+**Examples Chosen:** Follow along of [guide](https://burn.dev/book/basic-workflow/index.html) from [The Burn Book](https://burn.dev/book/overview.html) using **wgpu** backend ( ___Training a simple CNN on the MNIST dataset and running inference___ )
 
 ## 1. Setup: 
 Created a project [burnbook_guide](./burnbook_guide) and added dependencies.
@@ -39,7 +39,8 @@ Created a project [burnbook_guide](./burnbook_guide) and added dependencies.
 cargo new burnbook_guide
 cd burnbook_guide
 
-cargo add burn --features wgpu
+# Using wgpu backend
+cargo add burn --features wgpu 
 cargo add burn --features train
 ```
 
@@ -52,7 +53,7 @@ Also run:
 cargo add burn --features vision
 cargo add indicatif
 ```
-These are added because i faced some errors during execution.
+These are added because I faced some errors during execution.
 
 Now the [Cargo.toml](./burnbook_guide/Cargo.toml) file should look like this: 
 
@@ -82,7 +83,7 @@ Burn displays a training dashboard in the CLI
 The model weights are stored in the [artifacts](/burnbook_guide/artifacts) folder and are later used for model inference.
 
 ## 4. Inference: 
-Run the [main.rs](./burnbook_guide/src/main.rs) with any input choice other than 0 to ge the inference for the image at the 55th index in the MNIST test set (hardcoded in the main function).
+Run the [main.rs](./burnbook_guide/src/main.rs) with any input choice other than 0 to ge the inference for the image at the 55th index in the MNIST test set ( hardcoded in the main function ).
 
 ![inference](./images/8.png)
 
