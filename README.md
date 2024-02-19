@@ -131,6 +131,11 @@ Copy this `libwasmedge_rustls.so` to `~/.wasmedge/plugin` to install the rustls 
 
 >The installer downloads the plug-in files from the WasmEdge release on GitHub, unzips them, and then copies them over to the `~/.wasmedge/plugin/` folder (for user install) and to the `/usr/local/lib/wasmedge/` folder (for system install).
 
+```
+cd target/release
+cp libwasmedge_rustls.so ~/.wasmedge/plugin
+```
+
 ![target/release; ls -l](./images/12.png)
 
 Now we are ready to run the examples. **To show the use of the rustls plug-in I have only run the HTTPS examples.**
